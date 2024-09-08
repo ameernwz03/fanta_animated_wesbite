@@ -8,9 +8,256 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="./Assets/orange2.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css">
-
+    
     <title>Fanta Animated Website - GSAP</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      @font-face {
+  font-family: Product Sans;
+  src: url(Fonts/Product\ Sans\ Regular.ttf);
+}
+@font-face {
+  font-family: Product Sans B;
+  src: url(Fonts/Product\ Sans\ Bold.ttf);
+}
+@font-face {
+  font-family: Fanta;
+  src: url(Fonts/CSCanopus-Regular_demo-BF66d284ebea7e0.otf);
+}
+@font-face {
+  font-family: neu;
+  src: url(./Fonts/NeueMachina-Light.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Product Sans;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  background-color: orangered;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 15vh;
+  padding: 0vw 11vw;
+  z-index: 99;
+}
+
+nav a img {
+  height: 110px;
+  transform: rotate(15deg);
+}
+
+nav a,
+i {
+  font-size: 1.1vw;
+  text-decoration: none;
+  color: #fff;
+  font-family: neu;
+  font-weight: 500;
+}
+
+.cntr-nav {
+  display: flex;
+  gap: 3vw;
+}
+
+nav i {
+  font-size: 1.6vw;
+}
+
+.one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(150deg, rgb(255, 166, 0), rgb(255, 94, 0));
+}
+
+.one h1 {
+  font-size: 25vw;
+  font-family: Fanta;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+#fanta {
+  position: absolute;
+  width: 44%;
+  z-index: 2;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+#orange-cut {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  width: 15%;
+  z-index: 1;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+#orange {
+  position: absolute;
+  width: 22%;
+  z-index: 3;
+  top: 53%;
+  right: 30%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+#leaf {
+  top: 8%;
+  left: 0%;
+  transform: rotate(50deg);
+  position: absolute;
+  width: 17.4%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+#leaf2 {
+  bottom: 07%;
+  right: 05%;
+  transform: rotate(0deg);
+  position: absolute;
+  width: 12%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+#leaf3 {
+  position: absolute;
+  width: 20%;
+  top: 7%;
+  right: 0%;
+}
+
+/* #PAGE 2 STYLING */
+.two {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #0e3970;
+}
+
+.lft-two,
+.rght-two {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4vh;
+  width: 50%;
+  height: 100%;
+}
+
+.lft-two svg {
+  margin-top: 50vh;
+  width: 90%;
+  transform: rotateX(50deg);
+}
+
+.rght-two h1 {
+  color: #fff;
+  font-size: 5vw;
+  font-family: Fanta;
+}
+
+.rght-two p {
+  font-size: 1vw;
+  color: #fff;
+  width: 80%;
+  font-family: monospace;
+}
+.three {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(150deg, rgb(255, 166, 0), rgb(255, 94, 0));
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2vh;
+  width: 24vw;
+  height: 72vh;
+  margin-top: 15vh;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.card h1 {
+  margin-top: 40vh;
+  font-size: 3vw;
+  font-family: Fanta;
+  color: #ff9200;
+  letter-spacing: 1.4px;
+}
+
+.card button {
+  cursor: pointer;
+  font-size: 1.1vw;
+  font-family: neu;
+  border-radius: 50px;
+  border: none;
+  color: #fff;
+  background-color: #ef1b16;
+  padding: 1vw 2vw;
+}
+
+#cocacola {
+  top: -19%;
+  position: absolute;
+  width: 56%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+#pepsi {
+  top: -24%;
+  position: absolute;
+  width: 84%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+.lemon {
+  top: -35%;
+  position: absolute;
+  left: 49%;
+  width: 25vw;
+  transform: translate(-50%, 0%);
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+    </style>
   </head>
   <body>
     <div id="main">
